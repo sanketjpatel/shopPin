@@ -371,7 +371,11 @@ $(document).ready(function(){
        * When scrolled all the way to the bottom, add more tiles.
        */
       function onScroll(event) {
-        
+      	if (!isLoading) {
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+       			loadData();
+   			}
+   		}
        //alert("bottom!");
         // Only check when we're not still waiting for data.
       }; 
